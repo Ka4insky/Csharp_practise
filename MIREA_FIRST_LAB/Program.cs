@@ -10,7 +10,7 @@ namespace MIREA_FIRST_LAB
     {
         static void Main(string[] args)
         {
-            FirstPositiveLastDigit();
+            LastStringStartWithDigitLSize();
 
             void FirstPositiveLastNegative()
             {
@@ -79,6 +79,30 @@ namespace MIREA_FIRST_LAB
 
                 Console.WriteLine(answer);
 
+                Console.ReadLine();
+            }
+
+            void LastStringStartWithDigitLSize() 
+            {
+                String answer = null;
+
+                Console.WriteLine("Введите длину строки для поиска:");
+
+                int digit = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Введите последовательность целых чисел через пробел:");
+
+                string[] arr = Console.ReadLine().Split(' ').ToArray();
+
+                foreach (string x in arr) 
+                {
+                    if (x.Length == digit & Char.IsDigit(x[0])) 
+                    {
+                        answer = x;
+                    }
+                }
+
+                Console.WriteLine(answer ?? "Not found");
                 Console.ReadLine();
             }
         }
