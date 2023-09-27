@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,9 +11,9 @@ namespace MIREA_FIRST_LAB
     {
         static void Main(string[] args)
         {
-            LastStringStartWithDigitLSize();
+            FifthTask();
 
-            void FirstPositiveLastNegative()
+            void FirstTask()
             {
                 bool positive = false;
                 int negative = 0;
@@ -54,7 +55,7 @@ namespace MIREA_FIRST_LAB
                 Console.ReadLine();
             }
 
-            void FirstPositiveLastDigit() 
+            void SecondTask() 
             {
                 int answer = 0;
 
@@ -82,7 +83,7 @@ namespace MIREA_FIRST_LAB
                 Console.ReadLine();
             }
 
-            void LastStringStartWithDigitLSize() 
+            void ThirdTask() 
             {
                 String answer = null;
 
@@ -90,7 +91,7 @@ namespace MIREA_FIRST_LAB
 
                 int digit = int.Parse(Console.ReadLine());
 
-                Console.WriteLine("Введите последовательность целых чисел через пробел:");
+                Console.WriteLine("Введите последовательность строк через пробел:");
 
                 string[] arr = Console.ReadLine().Split(' ').ToArray();
 
@@ -104,6 +105,64 @@ namespace MIREA_FIRST_LAB
 
                 Console.WriteLine(answer ?? "Not found");
                 Console.ReadLine();
+            }
+
+            void FourthTask() 
+            {
+                int counter = 0;
+
+                string answer = null;
+
+                Console.WriteLine("Введите символ:");
+
+                string symbol = Console.ReadLine();
+
+                Console.WriteLine("Введите последовательность строк через пробел:");
+
+                string[] arr = Console.ReadLine().Split(' ').ToArray();
+
+                foreach (string x in arr) 
+                {
+                    if (x.EndsWith(symbol)) 
+                    {
+                        answer = x;
+                        counter++;
+                    }
+                }
+
+                switch (counter) 
+                {
+                    case 0: Console.WriteLine(""); break;
+
+                    case 1: Console.WriteLine(answer); break;
+
+                    default: Console.WriteLine("Error"); break;
+                }
+                Console.ReadLine();
+            }
+
+            void FifthTask()
+            {
+                int counter = 0;
+
+                Console.WriteLine("Введите символ:");
+
+                string symbol = Console.ReadLine();
+
+                Console.WriteLine("Введите последовательность строк через пробел:");
+
+                string[] arr = Console.ReadLine().Split(' ').ToArray();
+
+                foreach (string x in arr) 
+                {
+                    if (x.EndsWith(symbol) & x.StartsWith(symbol) & x.Length >1) 
+                    {
+                        counter++;
+                    }
+                }
+
+                Console.WriteLine(counter);
+                Console.ReadLine(); 
             }
         }
 
