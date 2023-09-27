@@ -11,7 +11,11 @@ namespace MIREA_FIRST_LAB
     {
         static void Main(string[] args)
         {
-            SixthTask();
+            //string[] arrr = Console.ReadLine().Split(' ').ToArray();
+            //Console.WriteLine(arrr[0][0] < arrr[0][1]);
+            //Console.ReadLine();
+
+            SeventhTask();
 
             void FirstTask()
             {
@@ -189,13 +193,53 @@ namespace MIREA_FIRST_LAB
 
                 if (counter != 0)
                 {
-                    Console.WriteLine("Среднее арифметическое" + average / counter);
+                    Console.WriteLine("Среднее арифметическое " + average / counter);
                 }
                 else 
                 {
                     Console.WriteLine(average);
                 }
 
+                Console.ReadLine();
+            }
+
+            void SeventhTask() 
+            {
+                String answer = "";
+
+                Console.WriteLine("Введите длину строки для поиска:");
+
+                int digit = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Введите последовательность строк через пробел:");
+
+                string[] arr = Console.ReadLine().Split(' ').ToArray();
+
+                foreach (string x in arr) 
+                {
+                    if (x.Length == digit & answer == "") 
+                    {
+                        answer = x;
+                    }
+
+                    if (x.Length == digit & answer != "") 
+                    {
+                        for (int i = 0; i < digit; i++) 
+                        {
+                            if (x[i] > answer[i])
+                            {
+                                answer = x;
+                                break;
+                            }
+                            else if (x[i] < answer[i])
+                            {
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                Console.WriteLine(answer);
                 Console.ReadLine();
             }
         }
