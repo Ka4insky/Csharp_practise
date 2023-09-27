@@ -15,7 +15,7 @@ namespace MIREA_FIRST_LAB
             //Console.WriteLine(arrr[0][0] < arrr[0][1]);
             //Console.ReadLine();
 
-            SeventhTask();
+            EighthTask();
 
             void FirstTask()
             {
@@ -240,6 +240,23 @@ namespace MIREA_FIRST_LAB
                 }
 
                 Console.WriteLine(answer);
+                Console.ReadLine();
+            }
+
+            void EighthTask() 
+            {
+                int sum = 0;
+
+                Console.WriteLine("Введите последовательность строк через пробел:");
+
+                string[] arr = Console.ReadLine().Split(' ').ToArray();
+
+                foreach (string x in arr) 
+                {
+                    sum += x.Length;
+                }
+
+                Console.WriteLine("Сумма длинн строк = " + sum);
                 Console.ReadLine();
             }
         }
