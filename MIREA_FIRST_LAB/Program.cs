@@ -11,7 +11,7 @@ namespace MIREA_FIRST_LAB
     {
         static void Main(string[] args)
         {
-            FifthTask();
+            SixthTask();
 
             void FirstTask()
             {
@@ -161,8 +161,42 @@ namespace MIREA_FIRST_LAB
                     }
                 }
 
-                Console.WriteLine(counter);
+                Console.WriteLine(counter + " строк");
                 Console.ReadLine(); 
+            }
+
+            void SixthTask()
+            {
+                float average = 0;
+
+                int counter = 0;
+
+                Console.WriteLine("Введите последовательность целых чисел через пробел:");
+
+                float[] arr = Console.ReadLine().Split(' ').
+                    Select(x => float.Parse(x)).ToArray();
+
+                foreach (float x in arr) 
+                {
+                    if (x > 9 & x < 100) 
+                    {
+                        average += x;
+                        counter++;
+                    }
+                }
+
+                Console.WriteLine("Кол-во чисел подходящих под условия:" + counter);
+
+                if (counter != 0)
+                {
+                    Console.WriteLine("Среднее арифметическое" + average / counter);
+                }
+                else 
+                {
+                    Console.WriteLine(average);
+                }
+
+                Console.ReadLine();
             }
         }
 
