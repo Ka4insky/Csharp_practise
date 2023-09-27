@@ -10,7 +10,7 @@ namespace MIREA_FIRST_LAB
     {
         static void Main(string[] args)
         {
-            FirstPositiveLastNegative();
+            FirstPositiveLastDigit();
 
             void FirstPositiveLastNegative()
             {
@@ -50,6 +50,34 @@ namespace MIREA_FIRST_LAB
                 {
                     Console.WriteLine(negative);
                 }
+
+                Console.ReadLine();
+            }
+
+            void FirstPositiveLastDigit() 
+            {
+                int answer = 0;
+
+                Console.WriteLine("Введите цифру:");
+
+                int digit = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Введите последовательность целых чисел через пробел:");
+
+                int[] arr = Console.ReadLine().Split(' ').
+                    Select(x => int.Parse(x)).ToArray();
+
+                foreach (int x in arr) 
+                {
+                    if (digit == x % 10 & x>0)
+                    {
+                        answer = x;
+                        break;
+                    }
+                    
+                }
+
+                Console.WriteLine(answer);
 
                 Console.ReadLine();
             }
