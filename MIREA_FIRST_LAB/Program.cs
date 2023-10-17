@@ -11,11 +11,8 @@ namespace MIREA_FIRST_LAB
     {
         static void Main(string[] args)
         {
-            //string[] arrr = Console.ReadLine().Split(' ').ToArray();
-            //Console.WriteLine(arrr[0][0] < arrr[0][1]);
-            //Console.ReadLine();
 
-            EighthTask();
+            NinthTask();
 
             void FirstTask()
             {
@@ -257,6 +254,43 @@ namespace MIREA_FIRST_LAB
                 }
 
                 Console.WriteLine("Сумма длинн строк = " + sum);
+                Console.ReadLine();
+            }
+
+            void NinthTask() 
+            {
+                Console.WriteLine("Введите целое число:");
+
+                int length = int.Parse(Console.ReadLine());
+
+                bool FoundNumber = false;
+
+                List<int> numbers = new List<int>();
+
+                Console.WriteLine("Введите последовательность целых чисел через пробел:");
+
+                int[] arr = Console.ReadLine().Split(' ').
+                    Select(x => int.Parse(x)).ToArray();
+
+                foreach (int x in arr) 
+                {
+                    if (x > length) FoundNumber = true;
+
+                    if (FoundNumber & (x % 2 == 1) & (x > 0)) 
+                    {
+                        numbers.Add(x);
+                    }
+
+                    FoundNumber = false;
+                }
+
+               numbers.Reverse(); 
+
+                foreach (int x in numbers) 
+                {
+                    Console.Write(x.ToString() + " ");
+                }
+
                 Console.ReadLine();
             }
         }
