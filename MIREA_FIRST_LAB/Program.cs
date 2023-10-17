@@ -12,7 +12,7 @@ namespace MIREA_FIRST_LAB
         static void Main(string[] args)
         {
 
-            NinthTask();
+            TenthTask();
 
             void FirstTask()
             {
@@ -284,15 +284,55 @@ namespace MIREA_FIRST_LAB
                     FoundNumber = false;
                 }
 
-               numbers.Reverse(); 
+                numbers.Reverse(); 
 
-                foreach (int x in numbers) 
-                {
-                    Console.Write(x.ToString() + " ");
-                }
+                var finalAnswer = string.Join(", ", numbers);
+
+                Console.WriteLine(finalAnswer);
 
                 Console.ReadLine();
             }
+
+            void TenthTask()
+            {
+                List<string> answer = new List<string>();
+
+                List<string> neededStringList = new List<string>(); 
+
+                Console.WriteLine("Введите целое число:");
+
+                int length = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Введите последовательность строк через пробел:");
+
+                List<string> startString = Console.ReadLine().Split(' ').ToList();
+
+                if (length - 1 <= startString.Count)
+                {
+                    neededStringList = startString.GetRange(0, length - 1);
+                }
+                else 
+                {
+                    neededStringList = startString;
+                }
+
+                foreach (string str in neededStringList) 
+                {
+                    if (str.Length % 2 == 1 && str[0]>= 'A' && str[0] <= 'Z') 
+                    {
+                        answer.Add(str);
+                    }
+                }
+
+                answer.Reverse();
+
+                var finalAnswer = string.Join(", ", answer);
+
+                Console.WriteLine(finalAnswer);
+
+                Console.ReadLine();
+            }
+
         }
 
         
